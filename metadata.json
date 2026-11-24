@@ -1,0 +1,6 @@
+{
+  "name": "FitFlow — Gym Management Dashboard",
+  "description": "Modern gym owner operating dashboard for memberships, renewals, payments, attendance, enquiries, and daily gym operations.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

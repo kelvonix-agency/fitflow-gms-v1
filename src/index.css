@@ -1,0 +1,118 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@layer base {
+  :root {
+    --bg-canvas: #f8f7f4;
+    --bg-card: #ffffff;
+    --bg-subtle: #f3f1ec;
+    --border-hairline: #e7e5df;
+    --text-primary: #141413;
+    --text-secondary: #686661;
+    --accent-orange: #ea580c;
+    --accent-orange-hover: #c2410c;
+    --accent-orange-soft: #fff7ed;
+    font-family: "DM Sans", -apple-system, BlinkMacSystemFont, sans-serif;
+  }
+
+  .dark {
+    --bg-canvas: #0e0f11;
+    --bg-card: #16181c;
+    --bg-subtle: #1e2127;
+    --border-hairline: #262930;
+    --text-primary: #f4f4f5;
+    --text-secondary: #9ca3af;
+    --accent-orange: #f97316;
+    --accent-orange-hover: #ea580c;
+    --accent-orange-soft: rgba(249, 115, 22, 0.14);
+  }
+
+  html {
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  html,
+  body {
+    background-color: var(--bg-canvas);
+    color: var(--text-primary);
+    overflow-x: clip;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  button,
+  a {
+    touch-action: manipulation;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  .font-display {
+    font-family: "Plus Jakarta Sans", "DM Sans", sans-serif;
+  }
+
+  .font-inter {
+    font-family: "Inter", "DM Sans", -apple-system, BlinkMacSystemFont, sans-serif;
+  }
+
+  .font-mono-num {
+    font-family: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+    font-variant-numeric: tabular-nums;
+  }
+
+  .tabular-nums {
+    font-variant-numeric: tabular-nums;
+  }
+
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}
+
+/* Smooth custom scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(120, 113, 108, 0.25);
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(120, 113, 108, 0.4);
+}
+
+@media print {
+  body * {
+    visibility: hidden !important;
+  }
+  #printable-fee-receipt,
+  #printable-fee-receipt * {
+    visibility: visible !important;
+  }
+  #printable-fee-receipt {
+    position: fixed !important;
+    left: 0 !important;
+    top: 0 !important;
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 24px !important;
+    background: #ffffff !important;
+    color: #141413 !important;
+    box-shadow: none !important;
+    border: 1px solid #e7e5df !important;
+  }
+}

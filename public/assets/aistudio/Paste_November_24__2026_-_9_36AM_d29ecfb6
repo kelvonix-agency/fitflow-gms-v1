@@ -1,0 +1,2057 @@
+Build a complete, production-quality Gym Management Dashboard web application for a modern gym owner.
+
+The product should feel like a premium SaaS product, not a generic admin template.
+
+I am providing a visual reference image. Use it as the PRIMARY DESIGN DIRECTION for the UI:
+- Clean off-white/light gray application background
+- White cards
+- Black/dark charcoal typography
+- Orange as the primary accent color
+- Very subtle borders
+- Soft shadows
+- Large rounded corners
+- Generous whitespace
+- Minimal, elegant interface
+- Compact navigation
+- Premium fintech/SaaS dashboard feel
+- No excessive gradients
+- No excessive glassmorphism
+- No unnecessarily colorful UI
+- No generic AI-dashboard appearance
+
+IMPORTANT:
+Do not copy the reference application's content, branding, icons, or exact layout. Recreate its visual language and adapt it specifically for gym management.
+
+PRODUCT NAME:
+Use "FitFlow" as the temporary product name.
+Make the gym name configurable from Settings.
+
+==================================================
+1. PRODUCT GOAL
+==================================================
+
+This application is a Gym Owner Operating Dashboard.
+
+The primary goal is:
+
+"Give a gym owner one place where they can understand the health of their gym and complete important daily tasks quickly."
+
+The owner should immediately be able to see:
+
+- Total members
+- Active members
+- Expiring memberships
+- Expired memberships
+- New members
+- Revenue
+- Pending payments
+- Today's attendance
+- Upcoming renewals
+- Birthdays
+- Important actions
+- Recent activity
+
+The dashboard should prioritize ACTIONS over vanity statistics.
+
+==================================================
+2. TECHNOLOGY
+==================================================
+
+Build using:
+
+- React
+- TypeScript
+- Vite
+- Tailwind CSS
+- shadcn/ui or equivalent high-quality accessible component system
+- Lucide React icons
+- Recharts for charts
+- React Router for routing
+- Supabase for authentication and database
+
+Structure the application cleanly so that the frontend and backend/data layer are separated.
+
+Use reusable components.
+
+Do not create one huge component file.
+
+Suggested structure:
+
+src/
+  components/
+  pages/
+  layouts/
+  hooks/
+  lib/
+  services/
+  types/
+  data/
+  utils/
+
+==================================================
+3. AUTHENTICATION
+==================================================
+
+Create a working authentication flow.
+
+Pages:
+
+/login
+/forgot-password
+
+Login screen:
+- Logo
+- Gym/product name
+- Email
+- Password
+- Remember me
+- Login button
+- Forgot password
+- Clean premium design
+
+For the demo environment, also provide demo login credentials or a "Continue with Demo Account" option.
+
+Authenticated users should be redirected to:
+
+/dashboard
+
+Protect all dashboard routes.
+
+==================================================
+4. APPLICATION LAYOUT
+==================================================
+
+Desktop:
+
+Left vertical sidebar.
+
+Top header.
+
+Main content area.
+
+Sidebar should contain:
+
+LOGO
+
+Overview
+
+Members
+
+Memberships
+
+Attendance
+
+Payments
+
+Revenue
+
+Enquiries
+
+Communication
+  Birthdays
+  Festival Wishes
+
+Reports
+
+Staff
+
+Settings
+
+At the bottom:
+
+Profile avatar
+Owner name
+Role
+Dropdown
+
+Sidebar should be collapsible.
+
+On mobile:
+
+Do NOT show the full desktop sidebar.
+
+Use:
+- Mobile top header
+- Hamburger menu / drawer
+- Bottom navigation for the most important sections where appropriate
+
+The entire application must be fully responsive.
+
+Desktop:
+1440px+
+Tablet:
+768px+
+Mobile:
+320px+
+
+No horizontal scrolling.
+
+==================================================
+5. VISUAL DESIGN SYSTEM
+==================================================
+
+Primary style:
+
+Background:
+very light warm gray / off-white.
+
+Cards:
+white.
+
+Text:
+near-black.
+
+Secondary text:
+muted gray.
+
+Primary accent:
+warm orange.
+
+Use orange for:
+- Primary buttons
+- Active navigation
+- Important highlights
+- Progress indicators
+- Selected states
+- Positive action emphasis
+
+Use semantic colors sparingly:
+
+Green:
+Active / Paid / Success
+
+Yellow:
+Expiring / Pending / Warning
+
+Red:
+Expired / Failed / Critical
+
+Blue:
+Informational
+
+Do not make every card colorful.
+
+Typography:
+Use a modern clean sans-serif font such as Inter.
+
+Typography hierarchy should be strong.
+
+Large page heading.
+
+Medium section headings.
+
+Small muted supporting text.
+
+Numbers should be visually prominent.
+
+Cards:
+border-radius approximately 18–24px.
+
+Buttons:
+rounded, clean, compact.
+
+Inputs:
+rounded approximately 12–14px.
+
+Avoid:
+- excessive shadows
+- huge gradients
+- excessive glass effects
+- neon colors
+- overly futuristic UI
+- cartoonish gym imagery
+- excessive animations
+
+==================================================
+6. GLOBAL HEADER
+==================================================
+
+Header should contain:
+
+Global search.
+
+Search placeholder:
+
+"Search members, payments, plans..."
+
+Keyboard shortcut:
+⌘ K / Ctrl K
+
+Right side:
+
+Theme toggle
+Notifications
+Owner profile
+
+Profile dropdown:
+
+My Profile
+Gym Settings
+Logout
+
+Notification icon should show unread count.
+
+Clicking notification opens a notification panel.
+
+==================================================
+7. DASHBOARD / OVERVIEW
+==================================================
+
+Route:
+
+/dashboard
+
+Top:
+
+Good morning, Rahul
+
+Use dynamic greeting based on current time.
+
+Supporting text:
+
+"Stay on top of your gym, members and daily operations."
+
+Show current date.
+
+Example:
+
+Monday, 24 November 2026
+
+Do not hard-code the date in production.
+
+==================================================
+8. DASHBOARD KPI CARDS
+==================================================
+
+Create six premium KPI cards.
+
+1. Total Members
+Example:
+428
+
+Supporting:
++12% than last month
+
+2. Active Members
+361
+
+3. Expiring Soon
+23
+
+Supporting:
+Within next 7 days
+
+4. Expired Members
+5
+
+5. This Month Revenue
+₹1,84,500
+
+6. New Members
+17
+
+Each card should include:
+- Icon
+- Large number
+- Label
+- Small comparison / context
+- Small visual indicator or sparkline where useful
+
+Make KPI cards responsive.
+
+Desktop:
+6 cards in a row when space permits.
+
+Tablet:
+3 + 3.
+
+Mobile:
+2 columns or 1 column depending on width.
+
+==================================================
+9. ACTION CENTER
+==================================================
+
+This is one of the most important dashboard components.
+
+Create:
+
+"Needs Your Attention"
+
+Show actionable items.
+
+Examples:
+
+5 Expired Memberships
+Follow up with these members
+[View]
+
+8 Memberships Expiring Soon
+Within 7 days
+[View]
+
+4 Pending Payments
+Total ₹12,500
+[View]
+
+2 Birthdays Today
+Send wishes
+[Wish]
+
+14 Renewals This Week
+Don't miss them
+[View]
+
+Each action must be clickable.
+
+Clicking should navigate to the relevant page with the appropriate filter already applied.
+
+For example:
+
+Click "8 Memberships Expiring Soon"
+
+Navigate to:
+
+/members?filter=expiring
+
+==================================================
+10. REVENUE OVERVIEW
+==================================================
+
+Create a large Revenue Overview card.
+
+Show:
+
+₹1,84,500
++13.5% vs last month
+
+Line/area chart using Recharts.
+
+Time filters:
+
+7D
+30D
+3M
+1Y
+
+Chart should show revenue over time.
+
+Tooltip should show:
+
+Date
+Revenue
+
+Below or beside chart, optionally show:
+
+This Month
+Last Month
+Growth
+
+Do not make the chart overly colorful.
+
+Use the primary orange accent.
+
+==================================================
+11. MEMBERSHIP STATUS
+==================================================
+
+Create a membership status visualization.
+
+Use donut chart.
+
+Categories:
+
+Active
+Expiring
+Expired
+
+Example:
+
+428 Total
+
+Active:
+361 (84%)
+
+Expiring:
+23 (5%)
+
+Expired:
+44 (11%)
+
+Clicking a category should navigate to Members with that filter.
+
+==================================================
+12. TODAY'S ATTENDANCE
+==================================================
+
+Create a compact Attendance Today card.
+
+Show:
+
+Present
+182
+
+Absent
+18
+
+Total Active Members
+361
+
+Include a small bar visualization for attendance across recent days.
+
+CTA:
+
+View Attendance
+
+==================================================
+13. MEMBERS LIST PREVIEW
+==================================================
+
+Dashboard should contain a Recent Members / Members List section.
+
+Columns:
+
+Member
+Phone
+Plan
+Status
+Expiry
+Actions
+
+Example:
+
+Amit Sharma
++91 98765 43210
+Premium
+Active
+12 Dec 2026
+
+Rahul Kumar
++91 91234 56789
+Quarterly
+Expiring
+28 Nov 2026
+
+Mohit Verma
++91 97654 32109
+Monthly
+Expired
+10 Nov 2026
+
+Actions:
+
+View
+More
+
+View All Members button.
+
+==================================================
+14. TODAY'S BIRTHDAYS
+==================================================
+
+Create a Today's Birthdays card.
+
+Show member avatar.
+
+Name.
+
+"Today"
+
+Button:
+
+"Wish All Birthday Members"
+
+Individual button:
+
+Wish
+
+When clicked:
+
+Generate personalized birthday message using the member's name.
+
+Example:
+
+"Happy Birthday, Amit! 🎉
+Wishing you a fantastic year ahead. Keep achieving your fitness goals!"
+
+Provide:
+
+Copy Message
+WhatsApp
+
+For WhatsApp:
+
+Use click-to-chat behavior.
+
+Do NOT claim that completely automatic WhatsApp broadcasting is available in V1.
+
+The WhatsApp action should open the WhatsApp conversation with the prefilled personalized message.
+
+==================================================
+15. MEMBERS MODULE
+==================================================
+
+Route:
+
+/members
+
+This is a complete member management system.
+
+Top:
+
+Members
+
+"Manage all gym members in one place."
+
+Buttons:
+
++ Add Member
+
+Search
+
+Filter
+
+Export
+
+Stats:
+
+Total
+Active
+Expiring
+Expired
+
+Table:
+
+Avatar
+Member ID
+Name
+Phone
+Plan
+Status
+Join Date
+Expiry Date
+Payment
+Actions
+
+Filters:
+
+All
+Active
+Expiring Soon
+Expired
+Payment Due
+
+Search by:
+
+Name
+Phone
+Member ID
+
+Sorting:
+
+Name
+Join Date
+Expiry Date
+Payment
+
+Pagination.
+
+On mobile convert table rows into responsive member cards.
+
+==================================================
+16. ADD MEMBER
+==================================================
+
+Create a proper Add Member modal/page.
+
+Fields:
+
+Full Name
+Profile Photo
+Phone
+Email
+Date of Birth
+Gender
+Address
+Emergency Contact
+Joining Date
+
+Membership:
+
+Plan
+Start Date
+End Date
+
+Payment:
+
+Amount
+Payment Status
+Payment Method
+Transaction ID
+
+Notes
+
+Buttons:
+
+Cancel
+Add Member
+
+Validation:
+
+Name required
+Phone required
+Plan required
+Start date required
+
+End date should automatically calculate from membership duration.
+
+==================================================
+17. MEMBER PROFILE
+==================================================
+
+Route:
+
+/members/:id
+
+Design this like a premium customer profile.
+
+Header:
+
+Avatar
+Name
+Member ID
+Status
+
+Actions:
+
+Edit
+Renew Membership
+WhatsApp
+More
+
+Summary cards:
+
+Current Plan
+Days Remaining
+Total Paid
+Attendance
+
+Tabs:
+
+Overview
+Membership
+Payments
+Attendance
+Activity
+
+Overview:
+
+Personal information.
+
+Emergency contact.
+
+Join date.
+
+Current membership.
+
+Membership:
+
+Current plan
+Start date
+Expiry date
+Renewal history
+
+Payments:
+
+All payments related to member.
+
+Attendance:
+
+Attendance history.
+
+Activity:
+
+Timeline:
+
+Joined gym
+Payment completed
+Membership renewed
+Attendance recorded
+Profile updated
+
+==================================================
+18. MEMBER CRUD
+==================================================
+
+Implement:
+
+Create
+Read
+Update
+Archive/Delete
+
+Prefer ARCHIVE over permanent deletion.
+
+When deleting:
+
+Show confirmation dialog.
+
+"Are you sure you want to archive this member?"
+
+Archived members should not appear in the normal member list.
+
+==================================================
+19. MEMBERSHIP PLANS
+==================================================
+
+Route:
+
+/memberships
+
+Create membership plan management.
+
+Example:
+
+Monthly
+₹1,500
+30 days
+
+Quarterly
+₹4,000
+90 days
+
+Half-Yearly
+₹7,000
+180 days
+
+Yearly
+₹12,000
+365 days
+
+Each plan should have:
+
+Name
+Price
+Duration
+Description
+Status
+
+Actions:
+
+Edit
+Archive
+
+Button:
+
++ Create Plan
+
+Create/edit plan modal.
+
+==================================================
+20. MEMBERSHIP RENEWAL
+==================================================
+
+Renewal is a critical workflow.
+
+Create:
+
+/renewals
+
+Sections:
+
+Expired
+Expiring in 3 days
+Expiring in 7 days
+Expiring in 30 days
+
+Each row:
+
+Member
+Current Plan
+Expiry
+Days Remaining
+Amount
+Actions
+
+Actions:
+
+Renew
+WhatsApp Reminder
+View
+
+Renew modal:
+
+Member
+Current plan
+New plan
+Start date
+Duration
+Amount
+Payment method
+Payment status
+
+After confirmation:
+
+- Update membership
+- Calculate new expiry
+- Create payment
+- Create renewal history entry
+- Create activity log
+- Show success notification
+
+==================================================
+21. PAYMENTS
+==================================================
+
+Route:
+
+/payments
+
+Show:
+
+Total Collected
+Pending
+This Month
+Today
+
+Transaction table:
+
+Transaction ID
+Member
+Type
+Plan
+Amount
+Payment Method
+Status
+Date
+Actions
+
+Payment types:
+
+New Membership
+Renewal
+Other
+
+Methods:
+
+Cash
+UPI
+Card
+Bank Transfer
+
+Statuses:
+
+Paid
+Pending
+Failed
+Refunded
+
+Filters:
+
+Date
+Status
+Method
+Member
+
+Search.
+
+==================================================
+22. REVENUE
+==================================================
+
+Route:
+
+/revenue
+
+Show:
+
+Revenue Overview
+
+Total Revenue
+This Month
+This Week
+Today
+
+Charts:
+
+Revenue by month
+Revenue by membership plan
+Payment method breakdown
+
+Show:
+
+Monthly revenue
+Previous month comparison
+Growth percentage
+
+Use Recharts.
+
+Do not build complicated accounting software.
+
+This is a gym revenue overview, not full accounting.
+
+==================================================
+23. ATTENDANCE
+==================================================
+
+Route:
+
+/attendance
+
+V1 attendance system should be simple.
+
+Show:
+
+Today's attendance
+Present
+Absent
+Total active members
+
+Date selector.
+
+Attendance table:
+
+Member
+Status
+Check-in time
+Date
+
+Actions:
+
+Mark Present
+Mark Absent
+
+Provide:
+
+Mark attendance
+
+Search member.
+
+Future-ready architecture for QR attendance, but DO NOT implement QR scanning in V1.
+
+==================================================
+24. ENQUIRIES / LEADS
+==================================================
+
+Route:
+
+/enquiries
+
+For people interested in joining the gym.
+
+Fields:
+
+Name
+Phone
+Interested Plan
+Source
+Status
+Follow-up Date
+Notes
+
+Statuses:
+
+New
+Contacted
+Interested
+Converted
+Lost
+
+Dashboard stats:
+
+New enquiries
+Follow-ups today
+Converted this month
+
+Actions:
+
+Add enquiry
+Edit
+Convert to member
+WhatsApp
+Archive
+
+"Convert to Member" should prefill the Add Member form.
+
+==================================================
+25. COMMUNICATION
+==================================================
+
+Create a Communication section.
+
+Sub-pages:
+
+Birthdays
+Festival Wishes
+
+==================================================
+26. BIRTHDAYS
+==================================================
+
+Route:
+
+/communication/birthdays
+
+Show:
+
+Today's birthdays
+
+Upcoming birthdays
+
+This month
+
+Each member:
+
+Avatar
+Name
+Birthday
+Age if available
+Membership status
+
+Actions:
+
+Wish
+WhatsApp
+
+Button:
+
+Wish All
+
+Before sending:
+
+Show preview of generated messages.
+
+==================================================
+27. FESTIVAL WISHES
+==================================================
+
+Route:
+
+/communication/festivals
+
+Create a festival communication system.
+
+Default festivals:
+
+New Year
+Republic Day
+Holi
+Independence Day
+Janmashtami
+Diwali
+Christmas
+
+Allow custom festival.
+
+Owner selects:
+
+Audience:
+
+All Members
+Active Members
+Expired Members
+Custom Members
+
+Message template:
+
+"Happy {festival}, {name}! Wishing you happiness, health and success."
+
+Preview.
+
+The system should replace:
+
+{name}
+
+with the member's actual name.
+
+For V1:
+
+Provide Copy Message and WhatsApp actions.
+
+Do not implement bulk automated WhatsApp sending without proper WhatsApp Business API integration.
+
+==================================================
+28. REPORTS
+==================================================
+
+Route:
+
+/reports
+
+Create useful simple reports.
+
+Reports:
+
+Member Growth
+Revenue
+Membership Expiry
+Attendance
+Payments
+
+Date range:
+
+7 days
+30 days
+3 months
+6 months
+1 year
+Custom
+
+Allow CSV export where practical.
+
+==================================================
+29. STAFF
+==================================================
+
+Route:
+
+/staff
+
+V1 basic staff management only.
+
+Fields:
+
+Name
+Photo
+Phone
+Email
+Role
+Joining Date
+Status
+
+Roles:
+
+Trainer
+Receptionist
+Manager
+Other
+
+Do not implement complex payroll in V1.
+
+==================================================
+30. SETTINGS
+==================================================
+
+Route:
+
+/settings
+
+Sections:
+
+Gym Profile
+Appearance
+Notifications
+Account
+
+Gym Profile:
+
+Gym Name
+Logo
+Phone
+Email
+Address
+Opening Hours
+Website
+Instagram
+
+Appearance:
+
+Light Mode
+Dark Mode
+
+Accent/theme selection should remain subtle.
+
+Notifications:
+
+Membership expiry reminder
+Payment reminder
+Birthday reminder
+Renewal reminder
+
+Account:
+
+Name
+Email
+Profile photo
+Password
+
+==================================================
+31. DARK MODE
+==================================================
+
+The reference design is primarily light mode.
+
+Implement dark mode properly.
+
+Do not simply invert colors.
+
+Dark mode should use:
+
+Very dark charcoal background
+Dark cards
+White/gray typography
+Orange accent
+
+Persist theme preference.
+
+==================================================
+32. GLOBAL SEARCH
+==================================================
+
+Implement a command/search interface.
+
+Shortcut:
+
+Cmd/Ctrl + K
+
+Search across:
+
+Members
+Payments
+Memberships
+Enquiries
+
+Example:
+
+Search:
+
+"Amit Sharma"
+
+Results:
+
+Member
+Payment
+Membership
+
+Click result to navigate directly.
+
+==================================================
+33. NOTIFICATIONS
+==================================================
+
+Create notification system.
+
+Examples:
+
+"5 memberships expired today."
+
+"8 memberships expire within 7 days."
+
+"4 payments are pending."
+
+"2 members have birthdays today."
+
+"14 renewals are due this week."
+
+Notifications should link to the relevant page.
+
+Include:
+
+Mark as read
+Mark all as read
+
+==================================================
+34. RECENT ACTIVITY
+==================================================
+
+Create activity timeline.
+
+Examples:
+
+Amit Sharma joined the gym
+₹4,000 payment received from Rahul Kumar
+Mohit Verma renewed membership
+Neha Singh profile updated
+Attendance marked for 182 members
+
+Show:
+
+Activity
+User/member
+Time
+Type
+
+==================================================
+35. DATABASE MODEL
+==================================================
+
+Create proper Supabase tables.
+
+profiles
+
+id
+name
+email
+avatar_url
+role
+created_at
+
+gyms
+
+id
+name
+logo_url
+phone
+email
+address
+website
+instagram
+opening_hours
+created_at
+
+members
+
+id
+gym_id
+member_code
+name
+avatar_url
+phone
+email
+date_of_birth
+gender
+address
+emergency_contact
+joining_date
+status
+notes
+created_at
+updated_at
+
+membership_plans
+
+id
+gym_id
+name
+price
+duration_days
+description
+status
+created_at
+updated_at
+
+memberships
+
+id
+gym_id
+member_id
+plan_id
+start_date
+end_date
+status
+amount
+created_at
+
+payments
+
+id
+gym_id
+member_id
+membership_id
+transaction_id
+amount
+payment_method
+payment_type
+status
+payment_date
+created_at
+
+attendance
+
+id
+gym_id
+member_id
+attendance_date
+status
+check_in_time
+created_at
+
+enquiries
+
+id
+gym_id
+name
+phone
+email
+interested_plan
+source
+status
+follow_up_date
+notes
+created_at
+updated_at
+
+birthday_messages
+
+id
+gym_id
+member_id
+message
+sent_at
+created_at
+
+festival_messages
+
+id
+gym_id
+festival
+message_template
+audience
+created_at
+
+notifications
+
+id
+gym_id
+type
+title
+message
+is_read
+created_at
+
+activities
+
+id
+gym_id
+type
+description
+related_member_id
+created_at
+
+staff
+
+id
+gym_id
+name
+avatar_url
+phone
+email
+role
+joining_date
+status
+created_at
+
+==================================================
+36. MULTI-TENANT ARCHITECTURE
+==================================================
+
+Design the database so the product can eventually support multiple gyms.
+
+Every gym-specific table should have:
+
+gym_id
+
+Users should only see data belonging to their gym.
+
+Implement proper Supabase Row Level Security.
+
+Do not expose one gym's data to another gym.
+
+==================================================
+37. DASHBOARD CALCULATIONS
+==================================================
+
+Do not hard-code dashboard statistics.
+
+Calculate from database.
+
+Total Members:
+count all non-archived members.
+
+Active Members:
+members with active membership.
+
+Expiring Soon:
+membership expiry within next 7 days.
+
+Expired:
+membership expiry before today.
+
+Revenue:
+sum successful payments.
+
+New Members:
+members created within selected period.
+
+Pending Payments:
+payments with pending status.
+
+Birthdays Today:
+members whose date_of_birth matches today's month/day.
+
+Renewals:
+memberships approaching expiry.
+
+==================================================
+38. AUTOMATIC MEMBERSHIP STATUS
+==================================================
+
+Membership status should be derived intelligently.
+
+If:
+
+end_date < today:
+Expired
+
+If:
+
+end_date <= today + 7 days:
+Expiring
+
+Otherwise:
+Active
+
+Do not require the owner to manually update status every day.
+
+==================================================
+39. DEMO DATA
+==================================================
+
+Seed the application with realistic demo data.
+
+Create:
+
+50+ members
+
+8+ membership plans
+
+100+ payments
+
+30+ attendance records
+
+10+ enquiries
+
+Multiple birthdays
+
+Multiple expired memberships
+
+Multiple upcoming renewals
+
+Multiple activities
+
+Use Indian names.
+
+Use INR currency.
+
+Use Indian phone number formatting.
+
+Example:
+
+₹1,500
+₹4,000
+₹12,000
+
+Do not use unrealistic placeholder names like:
+
+John Doe
+Jane Doe
+
+==================================================
+40. EMPTY STATES
+==================================================
+
+Every page needs a beautiful empty state.
+
+Example:
+
+No members yet.
+
+"Add your first member and start managing your gym."
+
+[+ Add Member]
+
+Do not leave blank white areas.
+
+==================================================
+41. LOADING STATES
+==================================================
+
+Use skeleton loaders.
+
+Do not show "Loading..." everywhere.
+
+Tables should have skeleton rows.
+
+Cards should have skeleton blocks.
+
+Charts should have skeleton placeholders.
+
+==================================================
+42. ERROR STATES
+==================================================
+
+If database/API fails:
+
+Show a clean error state.
+
+Example:
+
+"Something went wrong."
+
+"Unable to load your members."
+
+[Try Again]
+
+Do not crash the entire application.
+
+==================================================
+43. TOASTS
+==================================================
+
+Use toast notifications.
+
+Examples:
+
+"Member added successfully."
+
+"Membership renewed successfully."
+
+"Payment recorded successfully."
+
+"Member archived."
+
+"Settings updated."
+
+==================================================
+44. CONFIRMATION DIALOGS
+==================================================
+
+Use confirmation dialogs for destructive actions.
+
+Examples:
+
+Archive member
+Delete membership plan
+Remove staff member
+
+Never delete immediately without confirmation.
+
+==================================================
+45. ACCESSIBILITY
+==================================================
+
+Use:
+
+Keyboard navigation
+Visible focus states
+Accessible buttons
+ARIA labels where needed
+Good color contrast
+Readable text
+
+Do not rely only on colors to communicate status.
+
+For example:
+
+Active + green dot + "Active"
+
+Expired + red dot + "Expired"
+
+==================================================
+46. RESPONSIVE MOBILE EXPERIENCE
+==================================================
+
+This is extremely important.
+
+Do not simply shrink desktop.
+
+On mobile:
+
+Dashboard KPI cards should become compact cards.
+
+Tables should become cards or horizontal scroll containers only when necessary.
+
+Actions should remain easy to tap.
+
+Buttons should have appropriate touch targets.
+
+Mobile navigation should be simple.
+
+Member profile should be redesigned vertically.
+
+Charts should remain readable.
+
+No horizontal page overflow.
+
+Test at:
+
+320px
+375px
+390px
+430px
+768px
+1024px
+1440px
+
+==================================================
+47. MICRO-INTERACTIONS
+==================================================
+
+Keep animations subtle.
+
+Use:
+
+150–250ms transitions.
+
+Small hover effects.
+
+Button loading states.
+
+Modal transitions.
+
+Chart animations.
+
+Do NOT add excessive animations.
+
+The application should feel fast.
+
+==================================================
+48. DESIGN DETAILS
+==================================================
+
+Use the reference image's design philosophy:
+
+- Off-white page background
+- White elevated cards
+- Strong black typography
+- Orange primary accent
+- Rounded cards
+- Rounded inputs
+- Thin subtle borders
+- Spacious layout
+- Clean charts
+- Minimal icons
+- Premium SaaS feeling
+
+Create visual hierarchy through spacing, typography and card grouping rather than excessive colors.
+
+Use consistent spacing.
+
+Do not make everything look like floating glass.
+
+==================================================
+49. DASHBOARD LAYOUT
+==================================================
+
+Desktop dashboard should roughly follow this hierarchy:
+
+HEADER
+
+Good Morning + Date
+
+KPI ROW
+
+Total Members
+Active
+Expiring
+Expired
+Revenue
+New Members
+
+MAIN CONTENT
+
+Revenue Overview
+Membership Status
+Action Center
+
+SECONDARY CONTENT
+
+Attendance
+Recent Members
+Today's Birthdays
+
+BOTTOM
+
+Recent Activity / Additional insights
+
+Make the layout balanced.
+
+Do not overcrowd the dashboard.
+
+==================================================
+50. IMPORTANT UX PRINCIPLE
+==================================================
+
+The dashboard should answer these questions immediately:
+
+How many members do I have?
+
+How many are active?
+
+Who needs renewal?
+
+Who has expired?
+
+How much money did I make?
+
+Who has pending payment?
+
+Who joined recently?
+
+How many people came today?
+
+Whose birthday is today?
+
+What should I do right now?
+
+The owner should understand the gym's situation in under 10 seconds.
+
+==================================================
+51. QUICK ACTIONS
+==================================================
+
+Create a Quick Actions button/menu.
+
+Actions:
+
++ Add Member
++ Record Payment
++ Add Enquiry
++ Mark Attendance
++ Create Membership Plan
+
+These should open the appropriate modal/page immediately.
+
+==================================================
+52. EXPORT
+==================================================
+
+Where appropriate provide:
+
+Export CSV
+
+For:
+
+Members
+Payments
+Attendance
+Enquiries
+
+Do not create PDF export unless it is easy and reliable.
+
+==================================================
+53. DATA CONSISTENCY
+==================================================
+
+When an action happens, update all relevant parts of the application.
+
+Example:
+
+When a member renews:
+
+1. Membership changes
+2. Expiry date updates
+3. Payment is created
+4. Revenue updates
+5. Renewal count updates
+6. Activity log updates
+7. Notification updates
+8. Member profile updates
+
+Do not use fake UI-only state for important operations.
+
+==================================================
+54. REAL FUNCTIONALITY REQUIREMENT
+==================================================
+
+IMPORTANT:
+
+Do not build a static UI mockup.
+
+The application must actually work.
+
+CRUD must work.
+
+Search must work.
+
+Filters must work.
+
+Forms must work.
+
+Navigation must work.
+
+Charts should use real application data.
+
+Dashboard numbers should update after mutations.
+
+Membership renewal should actually update membership data.
+
+Payment creation should update revenue.
+
+Adding a member should update member count.
+
+Deleting/archiving a member should update relevant lists.
+
+Birthday calculations should use actual member dates.
+
+Use Supabase as the persistent data source.
+
+==================================================
+55. DEMO MODE
+==================================================
+
+If Supabase environment variables are unavailable during preview:
+
+Create a demo/mock data layer so the UI still works.
+
+But structure the code so replacing mock services with Supabase services is straightforward.
+
+Do not make the entire application dependent on hard-coded JSX data.
+
+==================================================
+56. FINAL QUALITY BAR
+==================================================
+
+Before considering the application complete, verify:
+
+- No broken routes
+- No console errors
+- No TypeScript errors
+- No broken buttons
+- No dead navigation
+- All forms validate
+- CRUD works
+- Search works
+- Filters work
+- Responsive layout works
+- Dark mode works
+- Theme preference persists
+- Dashboard calculations work
+- Membership renewal works
+- Payment creation works
+- Birthday system works
+- Notifications work
+- Empty states exist
+- Loading states exist
+- Error states exist
+- Mobile layout works
+
+The final result should feel like a real commercial SaaS product that a gym owner could use every day.
+
+==================================================
+57. FINAL DESIGN DIRECTION
+==================================================
+
+Think:
+
+"Premium banking dashboard + modern gym management software."
+
+NOT:
+
+"Generic gym admin panel."
+
+The product should feel calm, clean, trustworthy, fast and premium.
+
+Prioritize usability over visual decoration.
+
+Use orange carefully as the brand/action color.
+
+Keep the interface mostly neutral.
+
+Make important information immediately scannable.
+
+The owner should feel:
+
+"I can run my gym from here."
+
+Build the complete application now.
